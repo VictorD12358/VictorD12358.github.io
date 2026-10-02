@@ -1,6 +1,9 @@
 const GITHUB_USERNAME = "VictorD12358";
-const GITHUB_API = `https://api.github.com/users/${GITHUB_USERNAME}/repos?sort=updated&per_page=100`;
-
+const PROJECTS = [
+    "Base de données contrats immobiliers",
+    "Etude sur l'alimentation dans le monde",
+    "Analyse du stock et des ventes d'un site e-commerce de vins et spiritueux"
+];
 const projectsContainer = document.getElementById("projects-container");
 
 
