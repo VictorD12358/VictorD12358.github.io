@@ -1,147 +1,73 @@
 const GITHUB_USERNAME = "VictorD12358";
+
 const PROJECTS = [
-    "Base de données contrats immobiliers",
-    "Etude sur l'alimentation dans le monde",
-    "Analyse du stock et des ventes d'un site e-commerce de vins et spiritueux"
+    {
+        repo: "Base-de-donnees-contrats-immobiliers",
+        title: "Base de données contrats immobiliers",
+        description: "Conception et exploitation d'une base de données relationnelle MySQL à partir de données immobilières, avec import Python et analyses SQL.",
+        language: "SQL · Python"
+    },
+    {
+        repo: "Etude-sur-l-alimentation-dans-le-monde",
+        title: "Étude sur l'alimentation dans le monde",
+        description: "Analyse de données internationales sur l'alimentation et la disponibilité alimentaire.",
+        language: "Python · Data Analysis"
+    },
+    {
+        repo: "Analyse-du-stock-et-des-ventes-d-un-site-e-commerce-de-vins-et-spiritueux",
+        title: "Analyse du stock et des ventes d'un site e-commerce",
+        description: "Analyse des stocks, des ventes et des performances commerciales d'un site e-commerce.",
+        language: "Python · Data Analysis"
+    }
 ];
+
 const projectsContainer = document.getElementById("projects-container");
 
+function loadProjects() {
 
-async function loadProjects() {
+    projectsContainer.innerHTML = "";
 
-    try {
+    PROJECTS.forEach(project => {
 
-        projectsContainer.innerHTML = `
-            <p>Chargement des projets...</p>
-        `;
+        const card = document.createElement("article");
 
-        const response = await fetch(GITHUB_API);
+        card.className = "project-card";
 
-        if (!response.ok) {
-            throw new Error("Impossible de récupérer les projets GitHub.");
-        }
+        const githubUrl =
+            `https://github.com/${GITHUB_USERNAME}/${project.repo}`;
 
-        const repositories = await response.json();
+        card.innerHTML = `
+            <div>
+                <h3>${project.title}</h3>
 
-
-        // On garde uniquement les dépôts :
-        // - qui ne sont pas des forks
-        // - qui ne sont pas archivés
-        // - qui possèdent le topic "portfolio"
-
-        const projects = repositories.filter(repo =>
-            !repo.fork &&
-            !repo.archived &&
-            repo.topics.includes("portfolio")
-        );
-
-
-        // Si aucun projet n'est trouvé
-
-        if (projects.length === 0) {
-
-            projectsContainer.innerHTML = `
                 <p>
-                    Aucun projet avec le topic "portfolio" n'a été trouvé.
+                    ${project.description}
                 </p>
-            `;
+            </div>
 
-            return;
-        }
+            <div class="project-card-footer">
 
+                <span class="project-language">
+                    ${project.language}
+                </span>
 
-        // Création des cartes
+                <div class="project-links">
 
-        projectsContainer.innerHTML = "";
-
-        projects.forEach(repo => {
-
-            const card = document.createElement("article");
-
-            card.className = "project-card";
-
-
-            const demoLink = repo.homepage
-                ? `
                     <a
-                        href="${repo.homepage}"
+                        href="${githubUrl}"
                         target="_blank"
                         rel="noopener noreferrer"
                     >
-                        Démo ↗
+                        GitHub ↗
                     </a>
-                `
-                : "";
-
-
-            const language = repo.language
-                ? repo.language
-                : "Projet";
-
-
-            card.innerHTML = `
-
-                <div>
-
-                    <h3>
-                        ${repo.name}
-                    </h3>
-
-                    <p>
-                        ${repo.description || "Aucune description disponible."}
-                    </p>
 
                 </div>
 
-
-                <div class="project-card-footer">
-
-                    <span class="project-language">
-                        ${language}
-                    </span>
-
-
-                    <div class="project-links">
-
-                        <a
-                            href="${repo.html_url}"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            GitHub ↗
-                        </a>
-
-                        ${demoLink}
-
-                    </div>
-
-                </div>
-
-            `;
-
-
-            projectsContainer.appendChild(card);
-
-        });
-
-    }
-
-
-    catch (error) {
-
-        console.error(error);
-
-        projectsContainer.innerHTML = `
-            <p>
-                Impossible de charger les projets GitHub pour le moment.
-            </p>
+            </div>
         `;
 
-    }
-
+        projectsContainer.appendChild(card);
+    });
 }
-
-
-// Lancement
 
 loadProjects();
