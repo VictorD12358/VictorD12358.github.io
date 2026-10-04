@@ -4,13 +4,13 @@ const PROJECTS = [
     {
         repo: "Base-de-donnees-contrats-immobiliers",
         title: "Base de données contrats immobiliers",
-        description: description: "Conception d'une base de données relationnelle MySQL à partir de données immobilières. Import et traitement des données avec Python, modélisation du schéma relationnel et analyses SQL.",
-        language: "SQL · Python"
+        description: "Conception d'une base de données relationnelle MySQL à partir de données immobilières. Import et traitement des données avec Python, modélisation du schéma relationnel et analyses SQL.",
+        language: "SQL · Python",
         results: [
-    "30 335 contrats analysés",
-    "38 919 communes",
-    "Analyse des cotisations et des surfaces"
-],
+            "30 335 contrats analysés",
+            "38 919 communes",
+            "Analyse des cotisations et des surfaces"
+        ]
     },
     {
         repo: "Etude-sur-l-alimentation-dans-le-monde",
@@ -84,6 +84,8 @@ function loadProjects() {
         projectsContainer.appendChild(card);
     });
 }
+
+loadProjects();
 
         projectsContainer.appendChild(card);
     });
