@@ -41,6 +41,14 @@ function loadProjects() {
         const githubUrl =
             `https://github.com/${GITHUB_USERNAME}/${project.repo}`;
 
+        const resultsHTML = project.results
+            ? `
+                <ul class="project-results">
+                    ${project.results.map(result => `<li>${result}</li>`).join("")}
+                </ul>
+            `
+            : "";
+
         card.innerHTML = `
             <div>
                 <h3>${project.title}</h3>
@@ -48,6 +56,8 @@ function loadProjects() {
                 <p>
                     ${project.description}
                 </p>
+
+                ${resultsHTML}
             </div>
 
             <div class="project-card-footer">
@@ -70,6 +80,10 @@ function loadProjects() {
 
             </div>
         `;
+
+        projectsContainer.appendChild(card);
+    });
+}
 
         projectsContainer.appendChild(card);
     });
