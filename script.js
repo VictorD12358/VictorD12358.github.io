@@ -29,11 +29,14 @@ const PROJECTS = [
 const projectsContainer = document.getElementById("projects-container");
 
 function loadProjects() {
+    if (!projectsContainer) {
+        console.error("Le conteneur des projets est introuvable.");
+        return;
+    }
 
     projectsContainer.innerHTML = "";
 
     PROJECTS.forEach(project => {
-
         const card = document.createElement("article");
 
         card.className = "project-card";
@@ -41,33 +44,33 @@ function loadProjects() {
         const githubUrl =
             `https://github.com/${GITHUB_USERNAME}/${project.repo}`;
 
-        const resultsHTML = project.results
-            ? `
+        let resultsHTML = "";
+
+        if (project.results) {
+            resultsHTML = `
                 <ul class="project-results">
-                    ${project.results.map(result => `<li>${result}</li>`).join("")}
+                    ${project.results
+                        .map(result => `<li>${result}</li>`)
+                        .join("")}
                 </ul>
-            `
-            : "";
+            `;
+        }
 
         card.innerHTML = `
             <div>
                 <h3>${project.title}</h3>
 
-                <p>
-                    ${project.description}
-                </p>
+                <p>${project.description}</p>
 
                 ${resultsHTML}
             </div>
 
             <div class="project-card-footer">
-
                 <span class="project-language">
                     ${project.language}
                 </span>
 
                 <div class="project-links">
-
                     <a
                         href="${githubUrl}"
                         target="_blank"
@@ -75,9 +78,7 @@ function loadProjects() {
                     >
                         GitHub ↗
                     </a>
-
                 </div>
-
             </div>
         `;
 
@@ -86,7 +87,6 @@ function loadProjects() {
 }
 
 loadProjects();
-
         projectsContainer.appendChild(card);
     });
 }
