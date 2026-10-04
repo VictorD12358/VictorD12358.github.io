@@ -4,7 +4,7 @@ const PROJECTS = [
     {
         repo: "Base-de-donnees-contrats-immobiliers",
         title: "Base de données contrats immobiliers",
-        description: "Conception et exploitation d'une base de données relationnelle MySQL à partir de données immobilières, avec import Python et analyses SQL.",
+        description: description: "Conception d'une base de données relationnelle MySQL à partir de données immobilières. Import et traitement des données avec Python, modélisation du schéma relationnel et analyses SQL.",
         language: "SQL · Python"
     },
     {
