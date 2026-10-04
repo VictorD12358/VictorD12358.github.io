@@ -13,10 +13,16 @@ const PROJECTS = [
         ]
     },
     {
-        repo: "Etude-sur-l-alimentation-dans-le-monde",
-        title: "Étude sur l'alimentation dans le monde",
-        description: "Analyse de données internationales sur l'alimentation et la disponibilité alimentaire.",
-        language: "Python · Data Analysis"
+    repo: "Etude-sur-l-alimentation-dans-le-monde",
+    title: "Étude sur l'alimentation dans le monde",
+    description: "Analyse de la sous-nutrition mondiale en 2017 à partir de données de la FAO et de l'EFSA, avec exploration, visualisation et analyses complémentaires en Python.",
+    language: "Python · Jupyter · Data Visualisation",
+    results: [
+        "535,7 millions de personnes sous-nourries",
+        "7,1 % de la population mondiale",
+        "8,77 milliards d'adultes nourrissables théoriquement",
+        "Analyse des causes : accès, redistribution et utilisation des ressources"
+    ]
     },
     {
         repo: "Analyse-du-stock-et-des-ventes-d-un-site-e-commerce-de-vins-et-spiritueux",
