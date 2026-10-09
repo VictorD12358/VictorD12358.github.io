@@ -13,16 +13,16 @@ const PROJECTS = [
         ]
     },
     {
-    repo: "Etude-sur-l-alimentation-dans-le-monde",
-    title: "Étude sur l'alimentation dans le monde",
-    description: "Analyse de la sous-nutrition mondiale en 2017 à partir de données de la FAO et de l'EFSA, avec exploration, visualisation et analyses complémentaires en Python.",
-    language: "Python · Jupyter · Data Visualisation",
-    results: [
-        "535,7 millions de personnes sous-nourries",
-        "7,1 % de la population mondiale",
-        "8,77 milliards d'adultes nourrissables théoriquement",
-        "Analyse des causes : accès, redistribution et utilisation des ressources"
-    ]
+        repo: "Etude-sur-l-alimentation-dans-le-monde",
+        title: "Étude sur l'alimentation dans le monde",
+        description: "Analyse de la sous-nutrition mondiale en 2017 à partir de données de la FAO et de l'EFSA, avec exploration, visualisation et analyses complémentaires en Python.",
+        language: "Python · Jupyter · Data Visualisation",
+        results: [
+            "535,7 millions de personnes sous-nourries",
+            "7,1 % de la population mondiale",
+            "8,77 milliards d'adultes nourrissables théoriquement",
+            "Analyse des causes : accès, redistribution et utilisation des ressources"
+        ]
     },
     {
         repo: "Analyse-du-stock-et-des-ventes-d-un-site-e-commerce-de-vins-et-spiritueux",
@@ -30,15 +30,14 @@ const PROJECTS = [
         description: "Nettoyage et fusion de trois sources de données pour analyser le chiffre d'affaires, les ventes, les stocks et les marges du site BottleNeck. Identification des produits les plus rentables, des valeurs aberrantes et des pistes d'amélioration du catalogue.",
         language: "Python · Jupyter · Data Analysis",
         results: [
-             "153 700 € de chiffre d'affaires analysé",
-             "714 produits analysés sur 825",
-             "4,6 % des articles génèrent 80 % du chiffre d'affaires",
-             "495 000 € de stock valorisé",
-             "35 % de taux de marge moyen"
-   ]
-   }
+            "153 700 € de chiffre d'affaires analysé",
+            "714 produits analysés sur 825",
+            "4,6 % des articles génèrent 80 % du chiffre d'affaires",
+            "495 000 € de stock valorisé",
+            "35 % de taux de marge moyen"
+        ]
+    }
 ];
-
 const projectsContainer = document.getElementById("projects-container");
 
 function loadProjects() {
