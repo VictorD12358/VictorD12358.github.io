@@ -36,7 +36,7 @@ const PROJECTS = [
             "495 000 € de stock valorisé",
             "35 % de taux de marge moyen"
         ]
-    }
+    },
     {
         repo: "Analyse-des-ventes-d-une-librairie",
         title: "Analyse des ventes d'une librairie en ligne",
