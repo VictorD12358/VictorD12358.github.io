@@ -49,6 +49,19 @@ const PROJECTS = [
             "Corrélation âge / panier moyen : ρ = −0,33",
             "Analyse statistique des comportements d'achat et des produits"
         ]
+    },
+    {
+        repo: "Poetica",
+        title: "Analyse d'un corpus de poèmes français",
+        description: "Collecte par web scraping de près de 3 200 poèmes français, traitement automatique du langage (lemmatisation et analyse syntaxique) et création d'un dashboard Power BI pour explorer l'évolution de la langue poétique de 1660 à nos jours.",
+        language: "Python · Web scraping · NLP · Power BI · Formation",
+        results: [
+            "3 180 poèmes collectés auprès de 118 auteurs",
+            "Corpus final : 2 885 poèmes et 97 auteurs",
+            "10 périodes littéraires analysées, du Classicisme au Contemporain",
+            "Indice de diversité lexicale et score d'originalité syntaxique développés en DAX",
+            "Analyse de la loi de Heaps/Herdan et de l'influence de la longueur des textes"
+        ]
     }
 ];
 const projectsContainer = document.getElementById("projects-container");
