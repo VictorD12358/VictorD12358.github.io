@@ -37,6 +37,19 @@ const PROJECTS = [
             "35 % de taux de marge moyen"
         ]
     }
+    {
+        repo: "Analyse-des-ventes-d-une-librairie",
+        title: "Analyse des ventes d'une librairie en ligne",
+        description: "Analyse des performances commerciales, du comportement des clients et des produits d'une librairie en ligne. Étude des tendances temporelles, de la concentration du chiffre d'affaires et des relations entre âge, fréquence d'achat et panier moyen, avec des tests statistiques et des mesures de taille d'effet.",
+        language: "Python · Jupyter · Statistiques",
+        results: [
+            "687 534 lignes de transaction analysées",
+            "Les 4 plus gros clients représentent 7,4 % du chiffre d'affaires",
+            "Corrélation âge / fréquence d'achat : ρ = +0,21",
+            "Corrélation âge / panier moyen : ρ = −0,33",
+            "Analyse statistique des comportements d'achat et des produits"
+        ]
+    }
 ];
 const projectsContainer = document.getElementById("projects-container");
 
