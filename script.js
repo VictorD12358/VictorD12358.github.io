@@ -62,6 +62,19 @@ const PROJECTS = [
             "Indice de diversité lexicale et score d'originalité syntaxique développés en DAX",
             "Analyse de la loi de Heaps/Herdan et de l'influence de la longueur des textes"
         ]
+    },
+    {
+        repo: "Etude-de-marche-identifier-les-pays-cibles-pour-l-export-de-volaille",
+        title: "Étude de marché : identifier les pays cibles pour l'export de volaille",
+        description: "Sélection de marchés d'exportation pour l'entreprise fictive « La Poule qui Chante », à partir d'une analyse PESTEL, d'une analyse en composantes principales (ACP) et d'une segmentation de 100 pays. Construction d'indicateurs d'opportunité et comparaison de méthodes de clustering pour identifier les marchés les plus prometteurs.",
+        language: "Python · ACP · Clustering · Formation",
+        results: [
+            "100 pays étudiés et 26 marchés cibles identifiés",
+            "10 pays prioritaires disposant d'un accord commercial en vigueur avec l'UE",
+            "ACP : 4 axes conservés pour expliquer 80 % de la variance",
+            "Segmentation en 4 clusters : CAH de Ward et K-moyennes comparées",
+            "Score d'opportunité nette créé : PC4 − PC3"
+        ]
     }
 ];
 const projectsContainer = document.getElementById("projects-container");
