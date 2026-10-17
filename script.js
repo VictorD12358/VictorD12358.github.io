@@ -75,6 +75,19 @@ const PROJECTS = [
             "Segmentation en 4 clusters : CAH de Ward et K-moyennes comparées",
             "Score d'opportunité nette créé : PC4 − PC3"
         ]
+    },
+    {
+        repo: "Detection-de-faux-billets",
+        title: "Détection de faux billets",
+        description: "Développement et comparaison de modèles de machine learning pour distinguer les vrais billets des faux à partir de six mesures géométriques. Création d'une méthode de sélection de variables fondée sur le coefficient de recouvrement (OVL), comparaison de cinq approches de classification et déploiement de pipelines reproductibles.",
+        language: "Python · scikit-learn · Machine learning · Formation",
+        results: [
+            "1 463 billets complets analysés",
+            "Jusqu'à 99,2 % d'accuracy avec la régression logistique",
+            "98,8 % des faux billets détectés par le modèle KDE final",
+            "Sélection de variables à partir du recouvrement des distributions (OVL)",
+            "Pipelines sauvegardés avec Joblib pour prédire sur de nouveaux billets"
+        ]
     }
 ];
 const projectsContainer = document.getElementById("projects-container");
