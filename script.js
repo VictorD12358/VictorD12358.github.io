@@ -88,7 +88,20 @@ const PROJECTS = [
             "Sélection de variables à partir du recouvrement des distributions (OVL)",
             "Pipelines sauvegardés avec Joblib pour prédire sur de nouveaux billets"
         ]
-    }
+    },
+    {
+    repo: "Suivi-de-l-avancement-de-projets",
+    title: "Suivi de l'avancement de projets",
+    description: "Conception d'un tableau de bord Power BI interactif à trois niveaux (groupe, région, pays) pour suivre 104 projets IT et Marketing dans 52 pays. Identification des dérives de coûts, de délais et de livrables grâce à des indicateurs DAX et des alertes à partir d'un seuil de 15 %.",
+    language: "Power BI · DAX · Power Query · Formation",
+    results: [
+        "104 projets suivis dans 52 pays",
+        "32 projets en alerte, soit 31 % du portefeuille",
+        "60,2 M€ de coûts réels contre 56,1 M€ prévus (+7,3 %)",
+        "Analyse des dérives par région, pays, type de projet et phase",
+        "Dashboard interactif avec Gantt et navigation à trois niveaux"
+    ]
+}
 ];
 const projectsContainer = document.getElementById("projects-container");
 
