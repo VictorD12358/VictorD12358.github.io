@@ -101,7 +101,22 @@ const PROJECTS = [
         "Analyse des dérives par région, pays, type de projet et phase",
         "Dashboard interactif avec Gantt et navigation à trois niveaux"
     ]
-}
+},
+{
+    repo: "Auditer-un-projet-data-avec-une-IA",
+    title: "Audit d'un projet Data avec une IA générative",
+    description: "Comparaison de deux stratégies de prompt engineering pour auditer et améliorer un projet d'analyse des ventes e-commerce. Évaluation critique des recommandations de l'IA, vérification à l'aide de sources statistiques et techniques, puis application des améliorations retenues dans un notebook Python.",
+    language: "Python · Prompt Engineering · Statistiques · IA générative · Formation",
+    results: [
+        "2 stratégies de prompting comparées sur un même modèle d'IA",
+        "9 points convergents identifiés entre les deux approches",
+        "6 problèmes factuels supplémentaires détectés par le prompt structuré",
+        "Corrélations de Spearman : prix / prix d'achat (ρ = +0,99), prix / stock (ρ = −0,57), prix / ventes (ρ = −0,69)",
+        "Test de Kruskal-Wallis sur les marges par type de produit : H = 152,8 ; p < 10⁻²⁹",
+        "Améliorations appliquées : score MAD, diagramme de Pareto et documentation d'une anomalie de marge",
+        "Recommandations écartées lorsque le gain attendu ne justifiait pas la complexité"
+    ]
+},
 ];
 const projectsContainer = document.getElementById("projects-container");
 
