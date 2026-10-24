@@ -17,7 +17,7 @@ title: "Auditer un projet data avec une IA",
 summary: "Comparaison de deux stratégies de prompt pour auditer un projet d'analyse, puis application des recommandations retenues.",
 description: "Comparaison de deux stratégies de prompt engineering pour auditer et améliorer un projet d'analyse des ventes e-commerce. Évaluation critique des recommandations de l'IA, vérification à l'aide de sources statistiques et techniques, puis application des améliorations retenues dans un notebook Python.",
 tags: ["IA", "Python"],
-image: "images/projets/projet-13.webp",
+image: "images/projet-13.png",
 page: "",
 repo: "https://github.com/VictorD12358/Auditer-un-projet-data-avec-une-IA"
 },
