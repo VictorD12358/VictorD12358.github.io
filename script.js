@@ -13,7 +13,6 @@
 
 const PROJECTS = [
     {
-        num: 13,
         title: "Auditer un projet data avec une IA",
         summary: "Comparaison de deux stratégies de prompt pour auditer un projet d'analyse, puis application des recommandations retenues.",
         tags: ["IA", "Python"],
@@ -22,7 +21,6 @@ const PROJECTS = [
         repo: ""
     },
     {
-        num: 12,
         title: "Détection de faux billets",
         summary: "Sélection de variables et comparaison de modèles de classification pour repérer les faux billets.",
         tags: ["Machine learning", "Python"],
@@ -31,7 +29,6 @@ const PROJECTS = [
         repo: ""
     },
     {
-        num: 11,
         title: "Étude de marché pour l'export de volaille",
         summary: "Analyse en composantes principales et segmentation de 100 pays pour identifier les marchés cibles.",
         tags: ["Machine learning", "Python"],
@@ -40,7 +37,6 @@ const PROJECTS = [
         repo: ""
     },
     {
-        num: 10,
         title: "Analyse d'un corpus de poèmes français",
         summary: "Scraping, traitement du texte et dashboard pour explorer l'évolution de la langue poétique.",
         tags: ["Python", "Power BI"],
@@ -49,7 +45,6 @@ const PROJECTS = [
         repo: ""
     },
     {
-        num: 9,
         title: "Analyse des ventes d'une librairie en ligne",
         summary: "Évolution des ventes, profils de clients et tests statistiques avec mesure de la taille d'effet.",
         tags: ["Python"],
@@ -58,7 +53,6 @@ const PROJECTS = [
         repo: ""
     },
     {
-        num: 8,
         title: "Profils socio-démographiques des étudiants",
         summary: "Pipeline dbt pour comparer les inscriptions au parcours Data aux données de l'INSEE.",
         tags: ["dbt", "SQL", "Python"],
@@ -67,7 +61,6 @@ const PROJECTS = [
         repo: ""
     },
     {
-        num: 7,
         title: "Suivi de l'avancement de projets",
         summary: "Tableau de bord à trois niveaux pour suivre coûts, délais et livrables d'un portefeuille de projets.",
         tags: ["Power BI"],
@@ -76,7 +69,6 @@ const PROJECTS = [
         repo: ""
     },
     {
-        num: 6,
         title: "Stock et ventes d'un site de vins et spiritueux",
         summary: "Nettoyage, fusion de trois sources et analyse du chiffre d'affaires, du stock et des marges.",
         tags: ["Python"],
@@ -85,16 +77,14 @@ const PROJECTS = [
         repo: ""
     },
     {
-        num: 5,
         title: "Base de données de valeurs foncières",
         summary: "Modélisation relationnelle et douze requêtes SQL pour explorer le marché immobilier de 2020.",
         tags: ["SQL"],
         image: "images/projets/projet-5.webp",
         page: "",
-        repo: ""
+        repo: "https://github.com/VictorD12358/Etude-valeurs-foncieres"
     },
     {
-        num: 4,
         title: "Étude sur l'alimentation dans le monde",
         summary: "Où se trouve la sous-nutrition en 2017, et que disent les données de la FAO sur ses causes ?",
         tags: ["Python"],
@@ -103,7 +93,6 @@ const PROJECTS = [
         repo: ""
     },
     {
-        num: 3,
         title: "Base de données de contrats immobiliers",
         summary: "Création d'une base MySQL à partir de deux fichiers CSV et exploitation par requêtes SQL.",
         tags: ["SQL", "Python"],
@@ -138,10 +127,9 @@ function slugify(text) {
 }
 
 /* Crée une vignette de secours : numéro du projet sur fond quadrillé */
-function makeFallback(num) {
+function makeFallback() {
     const box = document.createElement("div");
     box.className = "thumb-fallback";
-    box.textContent = "P" + num;
     box.setAttribute("aria-hidden", "true");
     return box;
 }
@@ -168,7 +156,7 @@ function makeMedia(project) {
 
     /* si l'image n'existe pas (encore), on affiche la vignette de secours */
     img.addEventListener("error", () => {
-        img.replaceWith(makeFallback(project.num));
+        img.replaceWith(makeFallback());
     });
 
     wrapper.appendChild(img);
@@ -195,11 +183,6 @@ function makeCard(project) {
 
     const body = document.createElement("div");
     body.className = "project-body";
-
-    const number = document.createElement("p");
-    number.className = "project-number";
-    number.textContent = "Projet " + project.num;
-    body.appendChild(number);
 
     const title = document.createElement("h3");
     if (project.page) {
