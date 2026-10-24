@@ -12,94 +12,105 @@
    ========================================================= */
 
 const PROJECTS = [
-    {
-        title: "Auditer un projet data avec une IA",
-        summary: "Comparaison de deux stratégies de prompt pour auditer un projet d'analyse, puis application des recommandations retenues.",
-        tags: ["IA", "Python"],
-        image: "images/projets/projet-13.webp",
-        page: "",
-        repo: ""
-    },
-    {
-        title: "Détection de faux billets",
-        summary: "Sélection de variables et comparaison de modèles de classification pour repérer les faux billets.",
-        tags: ["Machine learning", "Python"],
-        image: "images/projets/projet-12.webp",
-        page: "",
-        repo: ""
-    },
-    {
-        title: "Étude de marché pour l'export de volaille",
-        summary: "Analyse en composantes principales et segmentation de 100 pays pour identifier les marchés cibles.",
-        tags: ["Machine learning", "Python"],
-        image: "images/projets/projet-11.webp",
-        page: "",
-        repo: ""
-    },
-    {
-        title: "Analyse d'un corpus de poèmes français",
-        summary: "Scraping, traitement du texte et dashboard pour explorer l'évolution de la langue poétique.",
-        tags: ["Python", "Power BI"],
-        image: "images/projets/projet-10.webp",
-        page: "",
-        repo: ""
-    },
-    {
-        title: "Analyse des ventes d'une librairie en ligne",
-        summary: "Évolution des ventes, profils de clients et tests statistiques avec mesure de la taille d'effet.",
-        tags: ["Python"],
-        image: "images/projets/projet-9.webp",
-        page: "",
-        repo: ""
-    },
-    {
-        title: "Profils socio-démographiques des étudiants",
-        summary: "Pipeline dbt pour comparer les inscriptions au parcours Data aux données de l'INSEE.",
-        tags: ["dbt", "SQL", "Python"],
-        image: "images/projets/projet-8.webp",
-        page: "",
-        repo: ""
-    },
-    {
-        title: "Suivi de l'avancement de projets",
-        summary: "Tableau de bord à trois niveaux pour suivre coûts, délais et livrables d'un portefeuille de projets.",
-        tags: ["Power BI"],
-        image: "images/projets/projet-7.webp",
-        page: "",
-        repo: ""
-    },
-    {
-        title: "Stock et ventes d'un site de vins et spiritueux",
-        summary: "Nettoyage, fusion de trois sources et analyse du chiffre d'affaires, du stock et des marges.",
-        tags: ["Python"],
-        image: "images/projets/projet-6.webp",
-        page: "",
-        repo: ""
-    },
-    {
-        title: "Base de données de valeurs foncières",
-        summary: "Modélisation relationnelle et douze requêtes SQL pour explorer le marché immobilier de 2020.",
-        tags: ["SQL"],
-        image: "images/projets/projet-5.webp",
-        page: "",
-        repo: "https://github.com/VictorD12358/Etude-valeurs-foncieres"
-    },
-    {
-        title: "Étude sur l'alimentation dans le monde",
-        summary: "Où se trouve la sous-nutrition en 2017, et que disent les données de la FAO sur ses causes ?",
-        tags: ["Python"],
-        image: "images/projets/projet-4.webp",
-        page: "",
-        repo: ""
-    },
-    {
-        title: "Base de données de contrats immobiliers",
-        summary: "Création d'une base MySQL à partir de deux fichiers CSV et exploitation par requêtes SQL.",
-        tags: ["SQL", "Python"],
-        image: "images/projets/projet-3.webp",
-        page: "",
-        repo: ""
-    }
+{
+title: "Auditer un projet data avec une IA",
+summary: "Comparaison de deux stratégies de prompt pour auditer un projet d'analyse, puis application des recommandations retenues.",
+description: "Comparaison de deux stratégies de prompt engineering pour auditer et améliorer un projet d'analyse des ventes e-commerce. Évaluation critique des recommandations de l'IA, vérification à l'aide de sources statistiques et techniques, puis application des améliorations retenues dans un notebook Python.",
+tags: ["IA", "Python"],
+image: "images/projets/projet-13.webp",
+page: "",
+repo: "https://github.com/VictorD12358/Auditer-un-projet-data-avec-une-IA"
+},
+{
+title: "Détection de faux billets",
+summary: "Sélection de variables et comparaison de modèles de classification pour repérer les faux billets.",
+description: "Développement et comparaison de modèles de machine learning pour distinguer les vrais billets des faux à partir de six mesures géométriques. Création d'une méthode de sélection de variables fondée sur le coefficient de recouvrement (OVL), comparaison de cinq approches de classification et déploiement de pipelines reproductibles.",
+tags: ["Machine learning", "Python"],
+image: "images/projets/projet-12.webp",
+page: "",
+repo: "https://github.com/VictorD12358/Detection-de-faux-billets"
+},
+{
+title: "Étude de marché pour l'export de volaille",
+summary: "Analyse en composantes principales et segmentation de 100 pays pour identifier les marchés cibles.",
+description: "Sélection de marchés d'exportation pour l'entreprise fictive « La Poule qui Chante », à partir d'une analyse PESTEL, d'une analyse en composantes principales (ACP) et d'une segmentation de 100 pays. Construction d'indicateurs d'opportunité et comparaison de méthodes de clustering pour identifier les marchés les plus prometteurs.",
+tags: ["Machine learning", "Python"],
+image: "images/projets/projet-11.webp",
+page: "",
+repo: "https://github.com/VictorD12358/Etude-de-marche-identifier-les-pays-cibles-pour-l-export-de-volaille"
+},
+{
+title: "Analyse d'un corpus de poèmes français",
+summary: "Scraping, traitement du texte et dashboard pour explorer l'évolution de la langue poétique.",
+description: "Collecte par web scraping de près de 3 200 poèmes français, traitement automatique du langage (lemmatisation et analyse syntaxique) et création d'un dashboard Power BI pour explorer l'évolution de la langue poétique de 1660 à nos jours.",
+tags: ["Python", "Power BI"],
+image: "images/projets/projet-10.webp",
+page: "",
+repo: "https://github.com/VictorD12358/Poetica"
+},
+{
+title: "Analyse des ventes d'une librairie en ligne",
+summary: "Évolution des ventes, profils de clients et tests statistiques avec mesure de la taille d'effet.",
+description: "Analyse des performances commerciales, du comportement des clients et des produits d'une librairie en ligne. Étude des tendances temporelles, de la concentration du chiffre d'affaires et des relations entre âge, fréquence d'achat et panier moyen, avec des tests statistiques et des mesures de taille d'effet.",
+tags: ["Python"],
+image: "images/projets/projet-9.webp",
+page: "",
+repo: "https://github.com/VictorD12358/Analyse-des-ventes-d-une-librairie"
+},
+{
+title: "Profils socio-démographiques des étudiants",
+summary: "Pipeline dbt pour comparer les inscriptions au parcours Data aux données de l'INSEE.",
+description: "Mise en place d'un pipeline de transformation de données avec dbt pour comparer les inscriptions au parcours Data aux données socio-démographiques de l'INSEE.",
+tags: ["dbt", "SQL", "Python"],
+image: "images/projets/projet-8.webp",
+page: "",
+repo: ""
+},
+{
+title: "Suivi de l'avancement de projets",
+summary: "Tableau de bord à trois niveaux pour suivre coûts, délais et livrables d'un portefeuille de projets.",
+description: "Conception d'un tableau de bord Power BI interactif à trois niveaux (groupe, région, pays) pour suivre 104 projets IT et Marketing dans 52 pays. Identification des dérives de coûts, de délais et de livrables grâce à des indicateurs DAX et des alertes à partir d'un seuil de 15 %.",
+tags: ["Power BI"],
+image: "images/projets/projet-7.webp",
+page: "",
+repo: "https://github.com/VictorD12358/Suivi-de-l-avancement-de-projets"
+},
+{
+title: "Stock et ventes d'un site de vins et spiritueux",
+summary: "Nettoyage, fusion de trois sources et analyse du chiffre d'affaires, du stock et des marges.",
+description: "Nettoyage et fusion de trois sources de données pour analyser le chiffre d'affaires, les ventes, les stocks et les marges du site BottleNeck. Identification des produits les plus rentables, des valeurs aberrantes et des pistes d'amélioration du catalogue.",
+tags: ["Python"],
+image: "images/projets/projet-6.webp",
+page: "",
+repo: "https://github.com/VictorD12358/Analyse-du-stock-et-des-ventes-d-un-site-e-commerce-de-vins-et-spiritueux"
+},
+{
+title: "Base de données de valeurs foncières",
+summary: "Modélisation relationnelle et douze requêtes SQL pour explorer le marché immobilier de 2020.",
+description: "Conception et modélisation d'une base de données relationnelle MySQL à partir de trois sources open data : transactions immobilières (DVF), données de population de l'INSEE et référentiel géographique. Exploitation de la base par 12 requêtes SQL pour analyser le marché immobilier français au premier semestre 2020, avec jointures, agrégations, CTE et fonctions de fenêtrage.",
+tags: ["SQL"],
+image: "images/projets/projet-5.webp",
+page: "",
+repo: "https://github.com/VictorD12358/Etude-valeurs-foncieres"
+},
+{
+title: "Étude sur l'alimentation dans le monde",
+summary: "Où se trouve la sous-nutrition en 2017, et que disent les données de la FAO sur ses causes ?",
+description: "Analyse de la sous-nutrition mondiale en 2017 à partir de données de la FAO et de l'EFSA, avec exploration, visualisation et analyses complémentaires en Python.",
+tags: ["Python"],
+image: "images/projets/projet-4.webp",
+page: "",
+repo: "https://github.com/VictorD12358/Etude-sur-l-alimentation-dans-le-monde"
+},
+{
+title: "Base de données de contrats immobiliers",
+summary: "Création d'une base MySQL à partir de deux fichiers CSV et exploitation par requêtes SQL.",
+description: "Conception d'une base de données relationnelle MySQL à partir de données immobilières. Import et traitement des données avec Python, modélisation du schéma relationnel et analyses SQL.",
+tags: ["SQL", "Python"],
+image: "images/projets/projet-3.webp",
+page: "",
+repo: "https://github.com/VictorD12358/Base-de-donnees-contrats-immobiliers"
+}
 ];
 
 /* Boutons de filtre, dans l'ordre d'affichage */
@@ -196,6 +207,11 @@ function makeCard(project) {
     summary.className = "project-summary";
     summary.textContent = project.summary;
     body.appendChild(summary);
+
+   const description = document.createElement("p");
+   description.className = "project-description";
+   description.textContent = project.description;
+   body.appendChild(description);
 
     const tagList = document.createElement("ul");
     tagList.className = "project-tags";
