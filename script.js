@@ -117,6 +117,23 @@ const PROJECTS = [
         "Recommandations écartées lorsque le gain attendu ne justifiait pas la complexité"
     ]
 },
+{
+    repo: "Etude-valeurs-foncieres",
+    title: "Étude des valeurs foncières",
+    description: "Conception et modélisation d'une base de données relationnelle MySQL à partir de trois sources open data : transactions immobilières (DVF), données de population de l'INSEE et référentiel géographique. Exploitation de la base par 12 requêtes SQL pour analyser le marché immobilier français au premier semestre 2020, avec jointures, agrégations, CTE et fonctions de fenêtrage.",
+    language: "SQL · MySQL · Modélisation · Open Data · Formation",
+    results: [
+        "34 169 ventes immobilières intégrées à la base de données",
+        "31 378 appartements vendus au premier semestre 2020",
+        "46 % des ventes d'appartements recensées en Île-de-France (14 465 ventes)",
+        "Prix moyen au m² à Paris : environ 12 100 €",
+        "Hausse de 3,7 % du nombre de ventes entre les deux premiers trimestres de 2020",
+        "Prix moyen au m² des 2 pièces supérieur d'environ 11 % à celui des 3 pièces",
+        "Classement des 3 communes les plus chères dans 5 départements avec ROW_NUMBER()",
+        "Croisement des transactions et des données de population pour mesurer les ventes pour 1 000 habitants",
+        "Modélisation relationnelle, contraintes d'intégrité et dictionnaire de données"
+    ]
+}
 ];
 const projectsContainer = document.getElementById("projects-container");
 
