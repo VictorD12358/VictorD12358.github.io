@@ -1,543 +1,122 @@
-/* =========================================================
-   VARIABLES : palette et typographie
-   Pour changer l'ambiance du site, modifie uniquement ce bloc.
-   ========================================================= */
-
-:root {
-    --paper:       #f2f5f1;   /* fond de page : gris-vert très clair */
-    --paper-deep:  #e6ece6;   /* fond des vignettes de secours */
-    --grid:        #d9e1da;   /* lignes du quadrillage (page d'accueil) */
-    --ink:         #1b2a2b;   /* texte principal : vert-gris profond, pas noir */
-    --ink-soft:    #4a5b5c;   /* texte secondaire */
-    --rule:        #c9d3cb;   /* filets et bordures */
-    --accent:      #0d6e6e;   /* boutons, liens, filtre actif */
-    --accent-dark: #0a5555;
-    --on-accent:   #ffffff;
-
-    /* couleur de chaque technologie (petit point devant l'étiquette) */
-    --t-sql:       #3b6ea5;
-    --t-python:    #5a8f3c;
-    --t-powerbi:   #c98a14;
-    --t-dbt:       #d4622b;
-    --t-ml:        #7a5aa6;
-    --t-ia:        #0d6e6e;
-
-    --gutter: max(6%, calc((100% - 1200px) / 2));   /* marge latérale commune à toute la page */
-
-    --font-display: "Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
-    --font-text:    "Source Serif 4", Georgia, "Times New Roman", serif;
-}
-
-
-/* =========================================================
-   BASE
-   ========================================================= */
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html {
-    scroll-behavior: smooth;
-    scroll-padding-top: 80px;
-}
-
-body {
-    font-family: var(--font-text);
-    font-size: 18px;
-    line-height: 1.65;
-    background: var(--paper);
-    color: var(--ink);
-}
-
-a {
-    color: inherit;
-    text-decoration: none;
-}
-
-img {
-    display: block;
-    max-width: 100%;
-}
-
-:focus-visible {
-    outline: 3px solid var(--accent);
-    outline-offset: 3px;
-    border-radius: 4px;
-}
-
-.skip-link {
-    position: absolute;
-    left: 16px;
-    top: -60px;
-    padding: 10px 16px;
-    background: var(--ink);
-    color: var(--paper);
-    z-index: 2000;
-}
-
-.skip-link:focus {
-    top: 12px;
-}
-
-
-/* =========================================================
-   NAVIGATION
-   ========================================================= */
-
-header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1000;
-    padding: 18px var(--gutter);
-    background: rgba(242, 245, 241, 0.88);
-    backdrop-filter: blur(10px);
-    border-bottom: 1px solid var(--rule);
-}
-
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 24px;
-}
-
-.brand {
-    font-family: var(--font-display);
-    font-weight: 700;
-    font-size: 17px;
-    letter-spacing: -0.3px;
-}
-
-.nav-links {
-    display: flex;
-    gap: 30px;
-}
-
-.nav-links a {
-    font-family: var(--font-display);
-    font-weight: 500;
-    font-size: 15px;
-    color: var(--ink-soft);
-    padding-bottom: 3px;
-    border-bottom: 2px solid transparent;
-    transition: color 0.2s ease, border-color 0.2s ease;
-}
-
-.nav-links a:hover {
-    color: var(--ink);
-    border-color: var(--accent);
-}
-
-
-/* =========================================================
-   STRUCTURE DES SECTIONS
-   ========================================================= */
-
-main {
-    width: 100%;
-}
-
-section {
-    padding: 110px var(--gutter);
-}
-
-section h2 {
-    font-family: var(--font-display);
-    font-weight: 700;
-    font-size: clamp(30px, 4vw, 44px);
-    letter-spacing: -1px;
-    line-height: 1.1;
-    margin-bottom: 16px;
-}
-
-.section-intro {
-    color: var(--ink-soft);
-    max-width: 62ch;
-}
-
-#about,
-#contact {
-    border-top: 1px solid var(--rule);
-}
-
-#contact {
-    padding-bottom: 140px;
-}
-
-#contact .section-intro {
-    margin-bottom: 28px;
-}
-
-
-/* =========================================================
-   BOUTONS
-   ========================================================= */
-
-.button {
-    display: inline-block;
-    padding: 13px 26px;
-    margin-right: 10px;
-    font-family: var(--font-display);
-    font-weight: 500;
-    font-size: 16px;
-    border-radius: 6px;
-    background: var(--accent);
-    color: var(--on-accent);
-    transition: background 0.2s ease;
-}
-
-.button:hover {
-    background: var(--accent-dark);
-}
-
-.button-quiet {
-    background: transparent;
-    color: var(--ink);
-    border: 1px solid var(--rule);
-}
-
-.button-quiet:hover {
-    background: var(--paper-deep);
-}
-
-
-/* =========================================================
-   ACCUEIL
-   Le quadrillage évoque un cahier d'analyste, il s'estompe vers le bas.
-   ========================================================= */
-
-#home {
-    min-height: 92vh;
-    padding: 140px var(--gutter) 100px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    position: relative;
-}
-
-#home::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background-image:
-        linear-gradient(var(--grid) 1px, transparent 1px),
-        linear-gradient(90deg, var(--grid) 1px, transparent 1px);
-    background-size: 36px 36px;
-    -webkit-mask-image: linear-gradient(to bottom, #000 40%, transparent 100%);
-            mask-image: linear-gradient(to bottom, #000 40%, transparent 100%);
-    pointer-events: none;
-}
-
-#home > * {
-    position: relative;
-}
-
-.hello {
-    font-family: var(--font-display);
-    font-weight: 500;
-    font-size: 18px;
-    color: var(--accent);
-    margin-bottom: 6px;
-}
-
-#home h1 {
-    font-family: var(--font-display);
-    font-weight: 700;
-    font-size: clamp(56px, 10vw, 128px);
-    line-height: 0.95;
-    letter-spacing: -0.045em;
-    margin-bottom: 22px;
-}
-
-#home h2 {
-    font-weight: 500;
-    font-size: clamp(24px, 3vw, 36px);
-    color: var(--ink-soft);
-    margin-bottom: 20px;
-}
-
-.lead {
-    max-width: 52ch;
-    color: var(--ink-soft);
-    margin-bottom: 34px;
-}
-
-#home .button {
-    align-self: flex-start;
-}
-
-
-/* =========================================================
-   PROJETS : filtres
-   ========================================================= */
-
-.filters {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-top: 36px;
-}
-
-.filter-btn {
-    font-family: var(--font-display);
-    font-weight: 500;
-    font-size: 15px;
-    padding: 8px 16px;
-    border: 1px solid var(--rule);
-    border-radius: 6px;
-    background: transparent;
-    color: var(--ink);
-    cursor: pointer;
-    transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
-}
-
-.filter-btn:hover {
-    border-color: var(--accent);
-}
-
-.filter-btn[aria-pressed="true"] {
-    background: var(--accent);
-    border-color: var(--accent);
-    color: var(--on-accent);
-}
-
-.result-count {
-    margin: 18px 0 30px;
-    font-size: 15px;
-    color: var(--ink-soft);
-}
-
-
-/* =========================================================
-   PROJETS : grille et vignettes
-   ========================================================= */
-
-#projects-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 48px 32px;
-}
-
-.project {
-    display: flex;
-    flex-direction: column;
-}
-
-.project[hidden] {
-    display: none;
-}
-
-.project.is-entering {
-    animation: appear 0.35s ease;
-}
-
-@keyframes appear {
-    from { opacity: 0; }
-    to   { opacity: 1; }
-}
-
-.project-media {
-    display: block;
-    aspect-ratio: 4 / 3;
-    overflow: hidden;
-    border: 1px solid var(--rule);
-    border-radius: 4px;
-    background: var(--paper-deep);
-}
-
-.project-media img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: top left;
-}
-
-a.project-media:hover {
-    border-color: var(--accent);
-}
-
-/* vignette de secours quand l'image n'existe pas encore */
-.thumb-fallback {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: var(--font-display);
-    font-weight: 700;
-    font-size: 64px;
-    letter-spacing: -0.04em;
-    color: var(--accent);
-    background-image:
-        linear-gradient(var(--grid) 1px, transparent 1px),
-        linear-gradient(90deg, var(--grid) 1px, transparent 1px);
-    background-size: 24px 24px;
-}
-
-.project-body {
-    padding-top: 16px;
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-}
-
-.project-number {
-    font-family: var(--font-display);
-    font-weight: 500;
-    font-size: 14px;
-    color: var(--ink-soft);
-    margin-bottom: 2px;
-}
-
-.project h3 {
-    font-family: var(--font-display);
-    font-weight: 700;
-    font-size: 22px;
-    line-height: 1.2;
-    letter-spacing: -0.3px;
-    margin-bottom: 8px;
-}
-
-.project h3 a:hover {
-    color: var(--accent);
-}
-
-.project-summary {
-    font-size: 16px;
-    color: var(--ink-soft);
-    margin-bottom: 14px;
-}
-
-.project-tags {
-    list-style: none;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 6px 16px;
-    margin-top: auto;
-    padding-top: 10px;
-    border-top: 1px solid var(--rule);
-}
-
-.project-tags li {
-    display: flex;
-    align-items: center;
-    gap: 7px;
-    font-family: var(--font-display);
-    font-weight: 500;
-    font-size: 14px;
-}
-
-.project-tags li::before {
-    content: "";
-    width: 9px;
-    height: 9px;
-    border-radius: 50%;
-    background: var(--ink-soft);
-}
-
-.project-tags li[data-tag="sql"]::before     { background: var(--t-sql); }
-.project-tags li[data-tag="python"]::before  { background: var(--t-python); }
-.project-tags li[data-tag="power-bi"]::before { background: var(--t-powerbi); }
-.project-tags li[data-tag="dbt"]::before     { background: var(--t-dbt); }
-.project-tags li[data-tag="machine-learning"]::before { background: var(--t-ml); }
-.project-tags li[data-tag="ia"]::before      { background: var(--t-ia); }
-
-.project-links {
-    display: flex;
-    gap: 18px;
-    margin-top: 12px;
-    font-family: var(--font-display);
-    font-weight: 500;
-    font-size: 15px;
-}
-
-.project-links a {
-    color: var(--accent);
-    border-bottom: 1px solid transparent;
-}
-
-.project-links a:hover {
-    border-color: var(--accent);
-}
-
-
-/* =========================================================
-   PIED DE PAGE
-   ========================================================= */
-
-footer {
-    border-top: 1px solid var(--rule);
-    padding: 28px 6%;
-    text-align: center;
-    color: var(--ink-soft);
-    font-size: 14px;
-}
-
-
-/* =========================================================
-   MOBILE
-   ========================================================= */
-
-@media (max-width: 800px) {
-
-    body {
-        font-size: 17px;
-    }
-
-    header {
-        padding: 14px 5%;
-    }
-
-    .nav-links {
-        gap: 18px;
-    }
-
-    .nav-links a {
-        font-size: 14px;
-    }
-
-    .brand {
-        display: none;
-    }
-
-    nav {
-        justify-content: center;
-    }
-
-    section {
-        padding-block: 84px;
-    }
-
-    #home {
-        min-height: 88vh;
-        padding-top: 120px;
-        padding-bottom: 84px;
-    }
-
-    #projects-container {
-        grid-template-columns: 1fr;
-        gap: 40px;
-    }
-}
-
-
-/* =========================================================
-   ACCESSIBILITÉ : réduire les animations si l'utilisateur le demande
-   ========================================================= */
-
-@media (prefers-reduced-motion: reduce) {
-    html {
-        scroll-behavior: auto;
-    }
-
-    * {
-        animation: none !important;
-        transition: none !important;
-    }
-}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="Portfolio de Victor D12358 — développeur et créateur de projets."
+    >
+
+    <title>Victor D12358 — Portfolio</title>
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <nav>
+            <a href="#home">Accueil</a>
+            <a href="#projects">Projets</a>
+            <a href="#about">À propos</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+
+    <main>
+
+        <!-- HERO -->
+
+        <section id="home">
+
+            <p>Bonjour, je suis</p>
+
+            <h1>Victor D12358</h1>
+
+            <h2>Data analyst</h2>
+
+            <p>
+                Bienvenue sur mon portfolio.
+            </p>
+
+            <a href="#projects">
+                Voir mes projets
+            </a>
+
+        </section>
+
+
+        <!-- PROJETS -->
+
+        <section id="projects">
+
+            <h2>Mes projets</h2>
+
+            <p>
+                Voici une sélection de mes projets.
+            </p>
+
+            <div id="projects-container">
+
+                <p>
+                    Les projets seront bientôt chargés automatiquement depuis GitHub.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- À PROPOS -->
+
+        <section id="about">
+
+            <h2>À propos</h2>
+
+            <p>
+                Je suis Victor, Data analyst professionel.
+            </p>
+
+        </section>
+
+
+        <!-- CONTACT -->
+
+        <section id="contact">
+
+            <h2>Contact</h2>
+
+            <p>
+                Vous pouvez retrouver mes projets sur GitHub.
+            </p>
+
+            <a
+                href="https://github.com/VictorD12358"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                Mon GitHub
+            </a>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+
+        <p>
+            © 2026 Victor D12358
+        </p>
+
+    </footer>
+    <script src="script.js"></script>
+    
+</body>
+</html>
+
 
