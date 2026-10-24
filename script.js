@@ -26,7 +26,7 @@ title: "Détection de faux billets",
 summary: "Sélection de variables et comparaison de modèles de classification pour repérer les faux billets.",
 description: "Développement et comparaison de modèles de machine learning pour distinguer les vrais billets des faux à partir de six mesures géométriques. Création d'une méthode de sélection de variables fondée sur le coefficient de recouvrement (OVL), comparaison de cinq approches de classification et déploiement de pipelines reproductibles.",
 tags: ["Machine learning", "Python"],
-image: "images/projets/projet-12.webp",
+image: "images/projet-12.png",
 page: "",
 repo: "https://github.com/VictorD12358/Detection-de-faux-billets"
 },
