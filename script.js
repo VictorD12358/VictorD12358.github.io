@@ -1,15 +1,3 @@
-/* =========================================================
-   TES PROJETS
-   Pour ajouter ou modifier un projet, tu changes uniquement cette liste.
-
-   - num      : numéro du projet OpenClassrooms
-   - title    : titre affiché sur la carte
-   - summary  : une ou deux phrases (textes à remplacer par les tiens)
-   - tags     : technologies, à choisir dans la liste FILTERS ci-dessous
-   - image    : capture d'écran (idéalement en .webp, moins de 200 Ko)
-   - page     : lien vers la page détaillée du projet (laisser "" pour masquer)
-   - repo     : lien vers le dépôt GitHub (laisser "" pour masquer)
-   ========================================================= */
 
 const PROJECTS = [
 {
@@ -118,7 +106,7 @@ const FILTERS = ["SQL", "Python", "Power BI", "dbt", "Machine learning", "IA"];
 
 
 /* =========================================================
-   CODE DE LA PAGE (pas besoin d'y toucher)
+   CODE DE LA PAGE 
    ========================================================= */
 
 const container = document.getElementById("projects-container");
