@@ -11,39 +11,52 @@
     >
 
     <title>Victor D12358 — Portfolio</title>
-    
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap"
+        rel="stylesheet"
+    >
+
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
+    <a class="skip-link" href="#main">Aller au contenu</a>
+
     <header>
-        <nav>
-            <a href="#home">Accueil</a>
-            <a href="#projects">Projets</a>
-            <a href="#about">À propos</a>
-            <a href="#contact">Contact</a>
+        <nav aria-label="Navigation principale">
+            <a class="brand" href="#home">Victor D12358</a>
+
+            <div class="nav-links">
+                <a href="#home">Accueil</a>
+                <a href="#projects">Projets</a>
+                <a href="#about">À propos</a>
+                <a href="#contact">Contact</a>
+            </div>
         </nav>
     </header>
 
 
-    <main>
+    <main id="main">
 
         <!-- HERO -->
 
         <section id="home">
 
-            <p>Bonjour, je suis</p>
+            <p class="hello">Bonjour, je suis</p>
 
             <h1>Victor D12358</h1>
 
             <h2>Data analyst</h2>
 
-            <p>
+            <p class="lead">
                 Quatre ans d'expérience dans la recherche scientifique, et deux dans le commerce grand compte.
             </p>
 
-            <a href="#projects">
+            <a class="button" href="#projects">
                 Voir mes projets
             </a>
 
@@ -56,18 +69,16 @@
 
             <h2>Mes projets</h2>
 
-            <p>
+            <p class="section-intro">
                 Une sélection de projets réalisés pendant ma formation Data Analyst
                 (OpenClassrooms, RNCP 6).
             </p>
 
-            <div id="projects-container">
+            <div id="filters" class="filters" role="group" aria-label="Filtrer les projets par technologie"></div>
 
-                <p>
-                    Les projets seront bientôt chargés automatiquement depuis GitHub.
-                </p>
+            <p id="result-count" class="result-count" aria-live="polite"></p>
 
-            </div>
+            <div id="projects-container"></div>
 
         </section>
 
@@ -78,7 +89,7 @@
 
             <h2>À propos</h2>
 
-            <p>
+            <p class="section-intro">
                 Data analyst en alternance chez Geodis, au sein de la direction grands
                 comptes, je travaille à l’interface entre le métier et la donnée. Mon
                 expertise : le commerce grands comptes, où chaque décision engage du
@@ -87,7 +98,7 @@
                 et préserver la rentabilité.
             </p>
 
-            <p>
+            <p class="section-intro">
                 Avant la data, j’ai passé quatre ans dans la recherche scientifique,
                 au contact d’organismes comme le CNRS et l’Inrap. J’y ai acquis une
                 méthode : poser des hypothèses, fiabiliser les données, documenter
@@ -106,6 +117,34 @@
 
             <h2>Contact</h2>
 
-            <p>
+            <p class="section-intro">
+                Vous pouvez retrouver mes projets sur GitHub.
+            </p>
 
+            <a
+                class="button"
+                href="https://github.com/VictorD12358"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                Mon GitHub
+            </a>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+
+        <p>
+            © 2026 Victor D12358
+        </p>
+
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
 
